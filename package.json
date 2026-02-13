@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/USUARIO/pagina-web-nlt",
+  "homepage": "https://moisesf1205-pixel.github.io/pagina-web-nlt",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
