@@ -1,8 +1,16 @@
-import Header from '@/components/Header';
+﻿import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Tag, Share2, Linkedin, Twitter } from 'lucide-react';
+import tankImage from '@/assets/tank-maintenance-3.jpg';
+import steadfastImage from '@/assets/steadfast-dart.png';
+import m113Image from '@/assets/m113-robotizado.jpg';
+import navalImage from '@/assets/embarcacion-naval.jpg';
+import dragonImage from '@/assets/dragon.jpg';
+import investigacionItImage from '@/assets/investigacion-it.jpg';
+import instalacionesNltImage from '@/assets/instalaciones-nlt.png';
+import unvex2026Image from '@/assets/unvex-2026.webp';
 
 interface Noticia {
   id: number;
@@ -20,6 +28,24 @@ interface Noticia {
 const noticias: Noticia[] = [
   {
     id: 1,
+    titulo: 'NLT participa en el proyecto SIRA-CUAS, un sistema acústico inteligente para detección de UAS',
+    fecha: 'Enero 21, 2026',
+    categoria: 'Proyectos',
+    resumen: 'NLT participa en el proyecto estratégico de I+D+i SIRA-CUAS, valorado en 7,5 millones de euros y financiado por el CDTI.',
+    contenido: [
+      'NLT (Next Level Technologies) participa en el proyecto estratégico de I+D+i SIRA-CUAS, valorado en 7,5 millones de euros y financiado por el Centro para el Desarrollo Tecnológico e Industrial (CDTI) en el marco del programa Misiones Ciencia e Innovación 2025.',
+      'El proyecto SIRA-CUAS (Sistema Inteligente de Reconocimiento Acústico – Counter UAS) investigará el desarrollo de un sistema distribuido de sensores acústicos inteligentes capaces de detectar, clasificar y geolocalizar amenazas UAS/FPV en entornos operacionales complejos.',
+      'La solución combinará inteligencia artificial, edge computing y análisis acústico avanzado para ofrecer un sistema pasivo, autónomo y portátil, diseñado para complementar los sistemas C-UAS tradicionales (radar, radiofrecuencia y tecnologías ópticas) y mejorar la detección de drones con bajo perfil electromagnético o trayectorias de vuelo impredecibles.',
+      'NLT aportará capacidades de inteligencia artificial aplicada a entornos acústicos complejos y edge computing, esenciales para la toma de decisiones autónoma del sistema.',
+      'El sistema se organizará en nodos equipados con sensores MEMS, procesamiento local basado en IA, comunicaciones seguras (MESH, LTE y satélite), ciberseguridad avanzada y soluciones de alimentación adaptables. Su diseño garantizará escalabilidad, robustez y compatibilidad con sistemas nacionales C2/C3.',
+      'Más allá de su valor tecnológico, SIRA-CUAS fortalecerá la base industrial y tecnológica de defensa española y contribuirá a la autonomía operativa europea. El proyecto cuenta con el aval del Ejército del Aire y del Espacio, que lo considera de alto interés estratégico.',
+    ],
+    imagen: 'https://ite-es.com/wp-content/uploads/2026/01/ite-cdti-proyecto-siracuas-simulacion-small-2-1024x671.jpg',
+    slug: 'nlt-sira-cuas',
+    fuente: 'NLT',
+  },
+  {
+    id: 2,
     titulo: 'Arranca Steadfast Dart 2026, el mayor ejercicio de la OTAN este año',
     fecha: 'Enero 20, 2026',
     categoria: 'Sector Defensa',
@@ -31,7 +57,7 @@ const noticias: Noticia[] = [
       'El ejercicio Steadfast Dart 2026 pone a prueba la capacidad de despliegue rápido de las fuerzas aliadas, simulando escenarios de respuesta ante amenazas híbridas y convencionales. Las maniobras incluyen operaciones terrestres, aéreas y de apoyo logístico.',
       'Esta edición cobra especial relevancia en el contexto geopolítico actual, demostrando la cohesión y preparación de los aliados para responder de forma coordinada ante cualquier amenaza a la seguridad colectiva.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1534643960519-11ad79bc19df?w=1200&q=80',
+    imagen: steadfastImage,
     slug: 'steadfast-dart-2026',
     fuente: 'Infodefensa',
     fuenteUrl: 'https://www.infodefensa.com',
@@ -49,44 +75,8 @@ const noticias: Noticia[] = [
       'El programa Dragón contempla la adquisición de más de 300 vehículos en diferentes configuraciones, con una inversión total cercana a los 2.000 millones de euros. La entrega se realizará de forma progresiva hasta 2030.',
       'La ministra destacó que "el Dragón representa el compromiso de España con unas Fuerzas Armadas modernas y preparadas, capaces de hacer frente a los retos del siglo XXI". También subrayó la importancia del programa para la industria de defensa nacional, que participa activamente en el desarrollo y fabricación.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=1200&q=80',
+    imagen: dragonImage,
     slug: 'vcr-8x8-dragon',
-    fuente: 'Infodefensa',
-    fuenteUrl: 'https://www.infodefensa.com',
-  },
-  {
-    id: 3,
-    titulo: 'Indra levantará en León la mayor fábrica de drones de España',
-    fecha: 'Enero 16, 2026',
-    categoria: 'Sector Defensa',
-    resumen: 'Indra Group levantará en León la principal y más avanzada fábrica de drones multipropósito de España.',
-    contenido: [
-      'Indra Group levantará en el polígono de Villadangos del Páramo (León) la que será la principal y más avanzada fábrica de drones multipropósito y munición merodeadora de España, con una inversión cercana a los 12 millones de euros.',
-      'La nueva instalación, que generará más de 100 empleos directos en la provincia de León, estará operativa a finales de 2026 y tendrá capacidad para producir centenares de sistemas no tripulados al año, tanto para las Fuerzas Armadas españolas como para la exportación.',
-      'El proyecto responde a la creciente demanda de sistemas UAS (Unmanned Aircraft Systems) en el sector defensa, especialmente tras las lecciones aprendidas en los conflictos recientes donde los drones han demostrado su valor táctico y estratégico.',
-      'La fábrica producirá varios modelos de drones desarrollados por Indra, incluyendo sistemas de vigilancia y reconocimiento, drones tácticos de ala fija y rotatoria, y la nueva familia de municiones merodeadoras que la compañía ha desarrollado en los últimos años.',
-      'El presidente de Indra destacó que "esta inversión refuerza el compromiso del grupo con el tejido industrial español y sitúa a León como un polo de innovación en el sector de sistemas no tripulados". La elección de la ubicación responde a la disponibilidad de suelo industrial, la cercanía a instalaciones militares y el apoyo de las administraciones locales.',
-    ],
-    imagen: 'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=1200&q=80',
-    slug: 'indra-fabrica-drones-leon',
-    fuente: 'Infodefensa',
-    fuenteUrl: 'https://www.infodefensa.com',
-  },
-  {
-    id: 4,
-    titulo: 'Hisdesat impulsa el satélite SpainSat NG III tras los daños del SpainSat NG II',
-    fecha: 'Enero 16, 2026',
-    categoria: 'Sector Defensa',
-    resumen: 'Hisdesat ha iniciado el proceso para el nuevo satélite SpainSat NG III tras confirmar daños irreparables en el NG II.',
-    contenido: [
-      'Hisdesat, en coordinación con el Ministerio de Defensa, ha iniciado el proceso de solicitud de oferta para el nuevo satélite SpainSat NG III, llamado a sustituir al SpainSat NG II tras confirmar que los daños ocasionados por un impacto de partícula espacial son irreparables.',
-      'El SpainSat NG II, lanzado en 2024, sufrió el pasado mes de noviembre un impacto de micrometeoro que dañó gravemente sus sistemas de propulsión y comunicaciones. Tras meses de intentos de recuperación, los técnicos han concluido que el satélite no puede ser reparado en órbita.',
-      'El nuevo SpainSat NG III incorporará mejoras significativas respecto a su predecesor, incluyendo mayor resistencia a impactos, redundancia en sistemas críticos y capacidades de comunicación ampliadas. Se espera que esté operativo en 2029.',
-      'La inversión estimada para el SpainSat NG III supera los 300 millones de euros, financiados conjuntamente por el Ministerio de Defensa y Hisdesat. El proyecto se enmarca en la estrategia de soberanía espacial de España.',
-      'Los satélites SpainSat proporcionan comunicaciones seguras a las Fuerzas Armadas españolas y aliadas, siendo un elemento crítico para las operaciones militares en el exterior. La pérdida del NG II ha obligado a recurrir temporalmente a capacidades de aliados mientras se desarrolla el sustituto.',
-    ],
-    imagen: 'https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=1200&q=80',
-    slug: 'spainsat-ng-iii',
     fuente: 'Infodefensa',
     fuenteUrl: 'https://www.infodefensa.com',
   },
@@ -103,44 +93,8 @@ const noticias: Noticia[] = [
       'La colaboración incluye el desarrollo de nuevas tecnologías en el ámbito de la guerra electrónica, sistemas de sensores avanzados y plataformas de mando y control. Ambas empresas compartirán recursos de I+D y capacidades de fabricación.',
       'NLT aporta al acuerdo su experiencia en sistemas embebidos de altas prestaciones, comunicaciones tácticas y desarrollo de software crítico, áreas en las que la empresa ha demostrado su competencia en programas nacionales e internacionales de defensa.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&q=80',
+    imagen: investigacionItImage,
     slug: 'acuerdo-electronica-defensa',
-  },
-  {
-    id: 6,
-    titulo: 'Defensa encarga a Indra un radar Lanza LTR-25 para Ucrania por 37 millones',
-    fecha: 'Enero 15, 2026',
-    categoria: 'Sector Defensa',
-    resumen: 'El Consejo de Ministros ha aprobado la fabricación de un radar Lanza LTR-25 destinado a Ucrania.',
-    contenido: [
-      'El Consejo de Ministros ha aprobado un acuerdo autorizando la firma de un contrato para la fabricación y suministro de un radar táctico de largo alcance Lanza LTR-25, así como su apoyo logístico, destinado a Ucrania, por un importe de 37 millones de euros.',
-      'El radar Lanza LTR-25, desarrollado y fabricado por Indra, es uno de los sistemas de vigilancia aérea más avanzados del mercado. Capaz de detectar y seguir simultáneamente cientos de blancos aéreos a distancias superiores a 400 kilómetros, es un elemento clave para la defensa aérea.',
-      'Esta donación se enmarca en el compromiso de España con el apoyo a Ucrania frente a la agresión rusa. El radar reforzará significativamente las capacidades de alerta temprana ucranianas, permitiendo una mejor defensa contra misiles y drones.',
-      'El ministro de Defensa explicó que "España continúa comprometida con la defensa de Ucrania y los valores democráticos. Este radar proporcionará una capacidad crítica para proteger a la población civil y las infraestructuras del país".',
-      'El contrato incluye no solo el radar sino también el entrenamiento de personal ucraniano, repuestos para dos años y soporte técnico. Indra desplegará un equipo en un país vecino para facilitar la puesta en servicio del sistema.',
-    ],
-    imagen: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&q=80',
-    slug: 'radar-lanza-ucrania',
-    fuente: 'Infodefensa',
-    fuenteUrl: 'https://www.infodefensa.com',
-  },
-  {
-    id: 7,
-    titulo: 'Airbus entra como inversor estratégico en el fondo Nazca Aeroespacial y Defensa',
-    fecha: 'Enero 15, 2026',
-    categoria: 'Sector Defensa',
-    resumen: 'Nazca Capital ha anunciado la incorporación de Airbus como nuevo inversor en el Fondo Nazca Aeroespacial y Defensa.',
-    contenido: [
-      'Nazca Capital ha anunciado la incorporación de Airbus como nuevo inversor en el Fondo Nazca Aeroespacial y Defensa Innvierte I FCR, el mayor fondo español especializado en el sector y uno de los mayores en Europa con un tamaño objetivo de 150 millones de euros.',
-      'La entrada de Airbus como inversor estratégico refuerza el posicionamiento del fondo como vehículo de referencia para la inversión en empresas del sector aeroespacial, defensa y seguridad en España y Europa.',
-      'El fondo, creado en 2024, ya ha realizado inversiones en varias startups y pymes del sector, incluyendo empresas de sistemas no tripulados, ciberseguridad, nuevos materiales y tecnologías espaciales. Su estrategia se centra en compañías con alto potencial de crecimiento y tecnologías diferenciales.',
-      'Miguel Arias, socio de Nazca Capital y responsable del fondo, señaló que "la incorporación de Airbus valida nuestra tesis de inversión y nos proporciona un socio industrial de primer nivel que aportará valor añadido a las empresas participadas".',
-      'Airbus, por su parte, busca a través de esta inversión identificar y apoyar tecnologías emergentes que puedan integrarse en sus programas futuros. La compañía ha intensificado en los últimos años su apuesta por el ecosistema de innovación español.',
-    ],
-    imagen: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?w=1200&q=80',
-    slug: 'airbus-nazca-defensa',
-    fuente: 'Infodefensa',
-    fuenteUrl: 'https://www.infodefensa.com',
   },
   {
     id: 8,
@@ -155,7 +109,7 @@ const noticias: Noticia[] = [
       'El Ministerio de Defensa ha coordinado con las principales empresas del sector nacional la presentación de propuestas, logrando que España sea uno de los países con mayor participación en esta primera convocatoria.',
       'La iniciativa SAFE representa un cambio de paradigma en la política de defensa europea, pasando de la cooperación voluntaria a programas estructurados con financiación comunitaria. Se espera que en los próximos años el presupuesto se incremente significativamente.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=1200&q=80',
+    imagen: navalImage,
     slug: 'espana-safe-ue',
     fuente: 'Infodefensa',
     fuenteUrl: 'https://www.infodefensa.com',
@@ -173,11 +127,11 @@ const noticias: Noticia[] = [
       'Jorge de León, director general de NLT, destacó que "esta certificación es el resultado del trabajo y compromiso de todo el equipo. Refleja nuestra filosofía de hacer las cosas bien desde el principio y nuestra obsesión por la satisfacción del cliente".',
       'La ISO 9001:2015 se suma a otras certificaciones que NLT está en proceso de obtener, incluyendo la ISO 14001 de gestión medioambiental y la ISO 45001 de seguridad y salud en el trabajo. Estas certificaciones son requisito habitual para participar en programas de defensa nacionales e internacionales.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=80',
+    imagen: instalacionesNltImage,
     slug: 'certificacion-iso-9001',
   },
   {
-    id: 10,
+    id: 11,
     titulo: 'Aterriza en Murcia UNVEX 2026, el mayor encuentro de sistemas no tripulados',
     fecha: 'Enero 16, 2026',
     categoria: 'Eventos',
@@ -189,26 +143,8 @@ const noticias: Noticia[] = [
       'El Ministerio de Defensa ha aprovechado el evento para presentar su estrategia de sistemas no tripulados para la próxima década, que contempla importantes inversiones en desarrollo y adquisición de estas tecnologías.',
       'NEXT LEVEL TECHNOLOGIES participa en la feria con un stand donde presenta sus soluciones de control remoto y sistemas embebidos para plataformas no tripuladas, generando gran interés entre los visitantes profesionales.',
     ],
-    imagen: 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=1200&q=80',
+    imagen: unvex2026Image,
     slug: 'unvex-2026-murcia',
-    fuente: 'Infodefensa',
-    fuenteUrl: 'https://www.infodefensa.com',
-  },
-  {
-    id: 11,
-    titulo: 'GMV lidera proyecto europeo para proteger infraestructuras críticas militares',
-    fecha: 'Enero 20, 2026',
-    categoria: 'Sector Defensa',
-    resumen: 'GMV lidera un proyecto europeo de ciberdefensa para proteger infraestructuras críticas militares.',
-    contenido: [
-      'La española GMV lidera un proyecto europeo para proteger infraestructuras críticas en escenarios militares, reforzando la capacidad de ciberdefensa de las fuerzas aliadas frente a amenazas híbridas cada vez más sofisticadas.',
-      'El proyecto, financiado por la Agencia Europea de Defensa (EDA) con un presupuesto de 8 millones de euros, desarrollará nuevas herramientas de detección y respuesta ante ciberataques dirigidos contra sistemas de mando y control, comunicaciones y logística militar.',
-      'GMV coordina un consorcio de 12 empresas y centros de investigación de 7 países europeos, aportando su experiencia en ciberseguridad y sistemas críticos de defensa. El proyecto tendrá una duración de tres años.',
-      'Las soluciones desarrolladas se integrarán en los sistemas de defensa de los países participantes y estarán disponibles para su uso por la OTAN. El proyecto incluye ejercicios de validación en entornos operativos reales.',
-      'La directora de Defensa de GMV destacó que "este proyecto posiciona a España y a GMV en la vanguardia de la ciberdefensa europea. Las amenazas híbridas son uno de los principales desafíos de seguridad actuales y requieren respuestas tecnológicas avanzadas".',
-    ],
-    imagen: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80',
-    slug: 'gmv-infraestructuras-criticas',
     fuente: 'Infodefensa',
     fuenteUrl: 'https://www.infodefensa.com',
   },
@@ -224,7 +160,7 @@ const NoticiaDetalle = () => {
   }
 
   const noticiasRelacionadas = noticias
-    .filter((n) => n.categoria === noticia.categoria && n.id !== noticia.id)
+    .filter((n) => n.categoria === noticia.categoria && n.slug !== noticia.slug)
     .slice(0, 3);
 
   const compartirLinkedIn = () => {
@@ -363,7 +299,7 @@ const NoticiaDetalle = () => {
                     <div className="space-y-4">
                       {noticiasRelacionadas.map((rel) => (
                         <Link
-                          key={rel.id}
+                          key={rel.slug}
                           to={`/actualidad/${rel.slug}`}
                           className="block group"
                         >
@@ -412,7 +348,7 @@ const NoticiaDetalle = () => {
                     to="/contacto"
                     className="inline-block bg-accent text-accent-foreground px-4 py-2 rounded font-medium text-sm hover:bg-accent/90 transition-colors"
                   >
-                    Contactar
+                    Contáctenos para saber más
                   </Link>
                 </div>
               </div>
@@ -427,3 +363,8 @@ const NoticiaDetalle = () => {
 };
 
 export default NoticiaDetalle;
+
+
+
+
+

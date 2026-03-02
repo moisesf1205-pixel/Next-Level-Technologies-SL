@@ -3,7 +3,8 @@ import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import tankImage from '@/assets/tank-maintenance-3.jpg';
-import roboticaImage from '@/assets/robotica.jpg';
+import ugvImage from '@/assets/ugv-descargas.png';
+import embarcacionNaval from '@/assets/embarcacion-naval.jpg';
 
 interface Servicio {
   titulo: string;
@@ -15,26 +16,26 @@ interface Servicio {
 const servicios: Servicio[] = [
   {
     titulo: 'MRO',
-    descripcion: 'Mantenimiento, reparacion y overhaul de plataformas criticas con trazabilidad tecnica.',
+    descripcion: 'Mantenimiento, reparación y overhaul de plataformas críticas con trazabilidad técnica.',
     imagen: tankImage,
     enlace: '/mantenimiento-ingenieria/mro',
   },
   {
-    titulo: 'Robotica',
-    descripcion: 'Integracion de sistemas roboticos para operacion remota, asistencia y automatizacion.',
-    imagen: roboticaImage,
+    titulo: 'Robótica',
+    descripcion: 'Integración de sistemas robóticos para operación remota, asistencia y apoyo técnico.',
+    imagen: ugvImage,
     enlace: '/mantenimiento-ingenieria/robotica',
   },
   {
-    titulo: 'Logistica',
-    descripcion: 'Planificacion, cadena de suministro y soporte operativo para disponibilidad sostenida.',
+    titulo: 'Logística',
+    descripcion: 'Planificación, cadena de suministro y soporte operativo para disponibilidad sostenida.',
     imagen: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80',
     enlace: '/mantenimiento-ingenieria/logistica',
   },
   {
     titulo: 'Naval',
-    descripcion: 'Ingenieria y soporte para sistemas maritimos, flota y mantenimiento en ciclo de vida.',
-    imagen: 'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?w=1200&q=80',
+    descripcion: 'Ingeniería y soporte para sistemas marítimos, flota y mantenimiento en ciclo de vida.',
+    imagen: embarcacionNaval,
     enlace: '/mantenimiento-ingenieria/naval',
   },
 ];
@@ -52,7 +53,7 @@ const InvestigacionDesarrollo = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight"
           >
-            Mantenimiento e Ingenieria
+            Mantenimiento e Ingeniería
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +61,7 @@ const InvestigacionDesarrollo = () => {
             transition={{ duration: 0.7, delay: 0.15 }}
             className="mt-4 text-primary-foreground/85 max-w-3xl"
           >
-            Capacidades integradas en MRO, Robotica, Logistica y Naval para sostener operaciones exigentes.
+            Capacidades integradas en MRO, Robótica, Logística y Naval para sostener operaciones exigentes.
           </motion.p>
         </div>
       </section>
@@ -108,3 +109,7 @@ const InvestigacionDesarrollo = () => {
 };
 
 export default InvestigacionDesarrollo;
+
+
+
+

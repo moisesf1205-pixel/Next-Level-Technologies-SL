@@ -5,10 +5,16 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/pagina-web-nlt/" : "/",
+  // Use root base path for custom domains (e.g., GoDaddy shared hosting).
+  base: "/",
   server: {
     host: "::",
     port: 8080,
+  },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+    sourcemap: false,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

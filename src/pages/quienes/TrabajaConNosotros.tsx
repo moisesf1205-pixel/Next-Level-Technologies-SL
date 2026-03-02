@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Briefcase, Users, Rocket } from 'lucide-react';
+import { Briefcase, Users, Rocket } from 'lucide-react';
 import { useState } from 'react';
 
 const TrabajaConNosotros = () => {
@@ -63,13 +63,6 @@ const TrabajaConNosotros = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link 
-            to="/quienes-somos" 
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Quiénes Somos
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

@@ -1,9 +1,17 @@
-import Header from '@/components/Header';
+﻿import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useState, useMemo } from 'react';
+import tankImage from '@/assets/tank-maintenance-3.jpg';
+import steadfastImage from '@/assets/steadfast-dart.png';
+import m113Image from '@/assets/m113-robotizado.jpg';
+import navalImage from '@/assets/embarcacion-naval.jpg';
+import dragonImage from '@/assets/dragon.jpg';
+import investigacionItImage from '@/assets/investigacion-it.jpg';
+import instalacionesNltImage from '@/assets/instalaciones-nlt.png';
+import unvex2026Image from '@/assets/unvex-2026.webp';
 
 interface Noticia {
   id: number;
@@ -25,11 +33,20 @@ const Actualidad = () => {
   const noticias: Noticia[] = [
     {
       id: 1,
+      titulo: 'NLT participa en el proyecto SIRA-CUAS, un sistema acústico inteligente para detección de UAS',
+      fecha: 'Enero 21, 2026',
+      categoria: 'Proyectos',
+      resumen: 'NLT (Next Level Technologies) participa en el proyecto estratégico de I+D+i SIRA-CUAS, valorado en 7,5 millones de euros y financiado por el CDTI, aportando capacidades de inteligencia artificial aplicada a entornos acústicos complejos y edge computing.',
+      imagen: 'https://ite-es.com/wp-content/uploads/2026/01/ite-cdti-proyecto-siracuas-simulacion-small-2-1024x671.jpg',
+      slug: 'nlt-sira-cuas',
+    },
+    {
+      id: 2,
       titulo: 'Arranca Steadfast Dart 2026, el mayor ejercicio de la OTAN este año',
       fecha: 'Enero 20, 2026',
       categoria: 'Sector Defensa',
       resumen: 'La OTAN ha iniciado el ejercicio Steadfast Dart 2026, la mayor maniobra militar planificada este año por el bloque atlántico y que constituye una de las pruebas más visibles de la nueva Allied Reaction Force (ARF).',
-      imagen: 'https://images.unsplash.com/photo-1534643960519-11ad79bc19df?w=800&q=80',
+      imagen: steadfastImage,
       slug: 'steadfast-dart-2026',
     },
     {
@@ -38,26 +55,8 @@ const Actualidad = () => {
       fecha: 'Enero 16, 2026',
       categoria: 'Sector Defensa',
       resumen: 'El Ejército de Tierra ha recibido oficialmente en Almería los primeros 40 vehículos VCR 8x8 Dragón en un acto presidido por la ministra de Defensa, Margarita Robles. Un programa clave para modernizar las capacidades de las Fuerzas Armadas.',
-      imagen: 'https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=800&q=80',
+      imagen: dragonImage,
       slug: 'vcr-8x8-dragon',
-    },
-    {
-      id: 3,
-      titulo: 'Indra levantará en León la mayor fábrica de drones de España',
-      fecha: 'Enero 16, 2026',
-      categoria: 'Sector Defensa',
-      resumen: 'Indra Group levantará en el polígono de Villadangos del Páramo (León) la que será la principal y más avanzada fábrica de drones multipropósito y munición merodeadora de España, con una inversión cercana a los 12 millones de euros.',
-      imagen: 'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&q=80',
-      slug: 'indra-fabrica-drones-leon',
-    },
-    {
-      id: 4,
-      titulo: 'Hisdesat impulsa el satélite SpainSat NG III tras los daños del SpainSat NG II',
-      fecha: 'Enero 16, 2026',
-      categoria: 'Sector Defensa',
-      resumen: 'Hisdesat, en coordinación con el Ministerio de Defensa, ha iniciado el proceso de solicitud de oferta para el nuevo satélite SpainSat NG III, llamado a sustituir al SpainSat NG II tras confirmar que los daños ocasionados por un impacto de partícula espacial son irreparables.',
-      imagen: 'https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?w=800&q=80',
-      slug: 'spainsat-ng-iii',
     },
     {
       id: 5,
@@ -65,26 +64,8 @@ const Actualidad = () => {
       fecha: 'Enero 15, 2026',
       categoria: 'Colaboraciones',
       resumen: 'NEXT LEVEL TECHNOLOGIES ha formalizado un acuerdo de colaboración estratégica para el desarrollo conjunto de sistemas electrónicos avanzados destinados a plataformas de vigilancia y reconocimiento.',
-      imagen: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
+      imagen: investigacionItImage,
       slug: 'acuerdo-electronica-defensa',
-    },
-    {
-      id: 6,
-      titulo: 'Defensa encarga a Indra un radar Lanza LTR-25 para Ucrania por 37 millones',
-      fecha: 'Enero 15, 2026',
-      categoria: 'Sector Defensa',
-      resumen: 'El Consejo de Ministros ha aprobado un acuerdo autorizando la firma de un contrato para la fabricación y suministro de un radar táctico de largo alcance Lanza LTR-25, así como su apoyo logístico, destinado a Ucrania.',
-      imagen: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
-      slug: 'radar-lanza-ucrania',
-    },
-    {
-      id: 7,
-      titulo: 'Airbus entra como inversor estratégico en el fondo Nazca Aeroespacial y Defensa',
-      fecha: 'Enero 15, 2026',
-      categoria: 'Sector Defensa',
-      resumen: 'Nazca Capital ha anunciado la incorporación de Airbus como nuevo inversor en el Fondo Nazca Aeroespacial y Defensa Innvierte I FCR, el mayor fondo español especializado en el sector y uno de los mayores en Europa.',
-      imagen: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?w=800&q=80',
-      slug: 'airbus-nazca-defensa',
     },
     {
       id: 8,
@@ -92,7 +73,7 @@ const Actualidad = () => {
       fecha: 'Enero 18, 2026',
       categoria: 'Sector Defensa',
       resumen: 'La Comisión Europea ha dado luz verde al primer paquete de financiación en materia de defensa para ocho Estados miembros de la UE, en el marco de la iniciativa Security Action for Europe (SAFE).',
-      imagen: 'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?w=800&q=80',
+      imagen: navalImage,
       slug: 'espana-safe-ue',
     },
     {
@@ -101,26 +82,17 @@ const Actualidad = () => {
       fecha: 'Diciembre 10, 2025',
       categoria: 'Certificaciones',
       resumen: 'Nos complace anunciar la obtención de la certificación ISO 9001:2015, que avala nuestro compromiso con la calidad en todos los procesos de diseño, desarrollo y fabricación.',
-      imagen: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+      imagen: instalacionesNltImage,
       slug: 'certificacion-iso-9001',
     },
     {
-      id: 10,
+      id: 11,
       titulo: 'Aterriza en Murcia UNVEX 2026, el mayor encuentro de sistemas no tripulados',
       fecha: 'Enero 16, 2026',
       categoria: 'Eventos',
       resumen: 'UNVEX 2026, el mayor evento de sistemas no tripulados en España, se celebra en Murcia reuniendo a los principales actores del sector de drones y vehículos autónomos para defensa y seguridad.',
-      imagen: 'https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=800&q=80',
+      imagen: unvex2026Image,
       slug: 'unvex-2026-murcia',
-    },
-    {
-      id: 11,
-      titulo: 'GMV lidera proyecto europeo para proteger infraestructuras críticas militares',
-      fecha: 'Enero 20, 2026',
-      categoria: 'Sector Defensa',
-      resumen: 'La española GMV lidera un proyecto europeo para proteger infraestructuras críticas en escenarios militares, reforzando la capacidad de ciberdefensa de las fuerzas aliadas.',
-      imagen: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
-      slug: 'gmv-infraestructuras-criticas',
     },
   ];
 
@@ -136,7 +108,7 @@ const Actualidad = () => {
   const ultimasPublicaciones = noticias.slice(0, 5);
 
   const archivo = [
-    { mes: 'Enero 2026', count: 10, param: 'enero-2026' },
+    { mes: 'Enero 2026', count: 6, param: 'enero-2026' },
     { mes: 'Diciembre 2025', count: 1, param: 'diciembre-2025' },
   ];
 
@@ -216,7 +188,7 @@ const Actualidad = () => {
               <div className="space-y-8">
                 {noticiasFiltradas.map((noticia, index) => (
                   <motion.article
-                    key={noticia.id}
+                    key={noticia.slug}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -309,7 +281,7 @@ const Actualidad = () => {
                   <h3 className="text-lg font-bold text-primary mb-4">Últimas Publicaciones</h3>
                   <ul className="space-y-3">
                     {ultimasPublicaciones.map((pub) => (
-                      <li key={pub.id}>
+                      <li key={pub.slug}>
                         <Link 
                           to={`/actualidad/${pub.slug}`}
                           className="text-muted-foreground hover:text-accent transition-colors text-sm leading-snug block"
@@ -353,3 +325,8 @@ const Actualidad = () => {
 };
 
 export default Actualidad;
+
+
+
+
+

@@ -1,11 +1,48 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail } from 'lucide-react';
+
+declare global {
+  interface Window {
+    google: any;
+    googleTranslateElementInit?: () => void;
+  }
+}
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
+  useEffect(() => {
+    if (document.getElementById('google-translate-script')) return;
+
+    window.googleTranslateElementInit = () => {
+      if (!window.google?.translate?.TranslateElement) return;
+      new window.google.translate.TranslateElement(
+        {
+          pageLanguage: 'es',
+          autoDisplay: false,
+        },
+        'google_translate_element'
+      );
+    };
+
+    const script = document.createElement('script');
+    script.id = 'google-translate-script';
+    script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  const setLanguage = (lang: 'es' | 'en') => {
+    const value = lang === 'en' ? '/es/en' : '/es/es';
+    document.cookie = `googtrans=${value};path=/`;
+    document.cookie = `googtrans=${value};domain=${window.location.hostname};path=/`;
+    window.location.reload();
+  };
+
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
+      <div id="google_translate_element" className="hidden" />
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo & Description */}
@@ -64,24 +101,49 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Enlaces</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                <a href="/#/quienes-somos" className="text-primary-foreground/80 hover:text-accent transition-colors">
                   Quiénes Somos
                 </a>
               </li>
               <li>
-                <a href="#maintenance" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  I+D
+                <a href="/#/mantenimiento-ingenieria" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Mantenimiento e Ingeniería
                 </a>
               </li>
               <li>
-                <a href="#parts" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Soluciones
+                <a href="/#/proyectos" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Proyectos
                 </a>
               </li>
               <li>
-                <a href="#defense" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  Defensa y Seguridad
+                <a href="/#/actualidad" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Actualidad
                 </a>
+              </li>
+              <li>
+                <a href="/#/contacto" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  Contacto
+                </a>
+              </li>
+              <li>
+                <div className="flex items-center gap-2 text-primary-foreground/80">
+                  <span className="text-xs uppercase tracking-wider">Idioma:</span>
+                  <button
+                    type="button"
+                    onClick={() => setLanguage('es')}
+                    className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  >
+                    ES
+                  </button>
+                  <span>/</span>
+                  <button
+                    type="button"
+                    onClick={() => setLanguage('en')}
+                    className="text-primary-foreground/80 hover:text-accent transition-colors"
+                  >
+                    EN
+                  </button>
+                </div>
               </li>
             </ul>
           </motion.div>

@@ -113,7 +113,7 @@ const ComponentesElectronicos = () => {
             to="/contacto"
             className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded font-medium hover:bg-accent/90 transition-colors"
           >
-            Solicitar presupuesto
+            Contáctenos para saber más
           </Link>
         </div>
       </section>

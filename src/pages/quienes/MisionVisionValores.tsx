@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Target, Eye, Handshake } from 'lucide-react';
+import { Target, Eye, Handshake } from 'lucide-react';
 
 const MisionVisionValores = () => {
   return (
@@ -12,13 +12,6 @@ const MisionVisionValores = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link 
-            to="/quienes-somos" 
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Quiénes Somos
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,14 +124,14 @@ const MisionVisionValores = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-primary mb-6">Nuestro Compromiso</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-8 text-justify">
               En NEXT LEVEL TECHNOLOGIES nos comprometemos a ofrecer soluciones tecnológicas que superen las expectativas de nuestros clientes, manteniendo siempre los más altos estándares de calidad, ética profesional y responsabilidad social. Creemos que la tecnología debe servir para mejorar la vida de las personas y contribuir al desarrollo de una sociedad más segura y eficiente.
             </p>
             <Link 
               to="/contacto"
               className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded font-medium hover:bg-accent/90 transition-colors"
             >
-              Trabaja con nosotros
+              Contáctenos para saber más
             </Link>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import QuienesSomos from "./pages/QuienesSomos";
@@ -15,9 +15,9 @@ import Contacto from "./pages/Contacto";
 // Proyectos
 import Proyectos from "./pages/proyectos/Proyectos";
 import T55 from "./pages/proyectos/T55";
-import Contenedores from "./pages/proyectos/Contenedores";
+import Runflats from "./pages/proyectos/Runflats";
 import M113Robotizado from "./pages/proyectos/M113Robotizado";
-import Drones from "./pages/proyectos/Drones";
+import SiraCuas from "./pages/proyectos/SiraCuas";
 // Subpáginas de Defensa y Seguridad
 import SistemasControl from "./pages/defensa/SistemasControl";
 import ElectronicaEmbebida from "./pages/defensa/ElectronicaEmbebida";
@@ -39,6 +39,7 @@ import Empresa from "./pages/quienes/Empresa";
 import MisionVisionValores from "./pages/quienes/MisionVisionValores";
 import CalidadCertificaciones from "./pages/quienes/CalidadCertificaciones";
 import Equipo from "./pages/quienes/Equipo";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -47,7 +48,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quienes-somos" element={<QuienesSomos />} />
@@ -56,9 +58,9 @@ const App = () => (
           <Route path="/recambios" element={<Recambios />} />
           <Route path="/proyectos" element={<Proyectos />} />
           <Route path="/proyectos/t55" element={<T55 />} />
-          <Route path="/proyectos/contenedores" element={<Contenedores />} />
+          <Route path="/proyectos/runflats" element={<Runflats />} />
           <Route path="/proyectos/m113-robotizado" element={<M113Robotizado />} />
-          <Route path="/proyectos/drones" element={<Drones />} />
+          <Route path="/proyectos/sira-cuas" element={<SiraCuas />} />
           <Route path="/defensa-seguridad" element={<DefensaSeguridad />} />
           <Route path="/defensa-seguridad/sistemas-control" element={<SistemasControl />} />
           <Route path="/defensa-seguridad/electronica-embebida" element={<ElectronicaEmbebida />} />
@@ -87,7 +89,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );

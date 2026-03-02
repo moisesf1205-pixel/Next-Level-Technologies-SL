@@ -1,4 +1,4 @@
-ï»¿import Header from '@/components/Header';
+import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -8,27 +8,27 @@ import m113Image from '@/assets/m113-robotizado.jpg';
 const projects = [
   {
     title: 'T55',
-    description: 'Programa de modernizacion integral para plataformas T55 con arquitectura digital, sensores avanzados y aumento de supervivencia.',
+    description: 'Programa de modernización integral para plataformas T55 con arquitectura digital, sensores avanzados y aumento de supervivencia.',
     href: '/proyectos/t55',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/T-55_main_battle_tank.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/T-55_MBT.jpg',
   },
   {
-    title: 'Contenedores',
-    description: 'Contenedores ISO para almacenamiento y gestion de runflats, con trazabilidad de stock y acceso rapido en despliegue.',
-    href: '/proyectos/contenedores',
+    title: 'Runflats',
+    description: 'Contenedores ISO para almacenamiento y gestión de runflats, con trazabilidad de stock y acceso rápido en despliegue.',
+    href: '/proyectos/runflats',
     image: contenedorRunflats,
   },
   {
     title: 'M113 robotizado',
-    description: 'Robotizacion de vehiculos M113 con control remoto, sensores tacticos y navegacion asistida.',
+    description: 'Robotización de vehículos M113 con control remoto, sensores tácticos y navegación asistida.',
     href: '/proyectos/m113-robotizado',
     image: m113Image,
   },
   {
-    title: 'Drones',
-    description: 'Sistemas aereos no tripulados para reconocimiento, apoyo logistico y enjambres cooperativos.',
-    href: '/proyectos/drones',
-    image: 'https://images.unsplash.com/photo-1508615070457-7baeba4003e5?w=900&q=80&auto=format&fit=crop',
+    title: 'SIRA-CUAS',
+    description: 'Sistema de detección acústica para identificación y localización de drones no autorizados.',
+    href: '/proyectos/sira-cuas',
+    image: 'https://ite-es.com/wp-content/uploads/2026/01/ite-cdti-proyecto-siracuas-simulacion-small-2-1024x671.jpg',
   },
 ];
 
@@ -48,8 +48,8 @@ const Proyectos = () => {
             Proyectos
           </motion.h1>
           <p className="mt-4 max-w-3xl text-primary-foreground/80">
-            Seleccion de programas especiales que combinan integracion electronica, software critico y plataformas
-            terrestres y aereas para misiones de alto impacto.
+            Selección de programas especiales que combinan integración electrónica, software crítico y plataformas
+            terrestres y aéreas para misiones de alto impacto.
           </p>
         </div>
       </section>
@@ -88,3 +88,4 @@ const Proyectos = () => {
 };
 
 export default Proyectos;
+

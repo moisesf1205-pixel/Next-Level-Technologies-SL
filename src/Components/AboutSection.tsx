@@ -44,9 +44,6 @@ const AboutSection = ({ imageSrc }: AboutSectionProps) => {
                 Con un sólido <strong className="text-primary">equipo de profesionales altamente cualificados</strong> e <strong className="text-primary">instalaciones</strong> de última generación, nos posicionamos como líderes en el desarrollo de soluciones de siguiente nivel.
               </p>
             </div>
-            <Link to="/quienes-somos" className="btn-primary mt-8 inline-block">
-              SABER MÁS
-            </Link>
           </motion.div>
 
           {/* Image */}

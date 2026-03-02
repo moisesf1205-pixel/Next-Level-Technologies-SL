@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import instalacionesNlt from '@/assets/instalaciones-nlt.png';
 
 const Empresa = () => {
   return (
@@ -12,13 +12,6 @@ const Empresa = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link 
-            to="/quienes-somos" 
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Quiénes Somos
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,8 +78,8 @@ const Empresa = () => {
             <div>
               <div className="aspect-video rounded-lg overflow-hidden mb-8">
                 <img 
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&q=80" 
-                  alt="Oficina corporativa profesional"
+                  src={instalacionesNlt} 
+                  alt="Instalaciones de NLT en Leganés"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -136,7 +129,7 @@ const Empresa = () => {
                   to="/contacto"
                   className="inline-block bg-accent text-accent-foreground px-6 py-2 rounded font-medium hover:bg-accent/90 transition-colors"
                 >
-                  Contactar
+                  Contáctenos para saber más
                 </Link>
               </div>
             </div>

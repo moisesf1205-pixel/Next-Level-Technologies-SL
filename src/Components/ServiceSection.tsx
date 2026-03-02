@@ -66,9 +66,6 @@ const ServiceSection = ({
             <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
               {content}
             </div>
-            <Link to={linkTo} className="btn-primary mt-8 inline-block">
-              SABER MÁS
-            </Link>
           </motion.div>
         </div>
       </div>

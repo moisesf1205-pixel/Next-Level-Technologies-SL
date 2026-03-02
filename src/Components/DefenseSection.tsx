@@ -63,10 +63,6 @@ const DefenseSection = ({ imageSrc }: DefenseSectionProps) => {
                 <span className="text-muted-foreground">Plataformas virtuales para formación de personal en escenarios de defensa.</span>
               </div>
             </div>
-
-            <Link to="/defensa-seguridad" className="btn-primary mt-8 inline-block">
-              SABER MÁS
-            </Link>
           </motion.div>
 
           {/* Image */}

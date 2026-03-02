@@ -230,3 +230,22 @@
     animation: diagonal-lines 10s linear infinite alternate;
   }
 }
+
+/* Keep Google Translate integrated in-page (hide top toolbar/balloon UI) */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}

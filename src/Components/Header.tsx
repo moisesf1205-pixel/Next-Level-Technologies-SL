@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import nltLogo from '@/assets/nlt-logo.png';
 
 interface SubItem {
   label: string;
@@ -22,19 +23,19 @@ const navItems: NavItem[] = [
     parentNavigable: false,
     subItems: [
       { label: 'Empresa', href: '/quienes-somos/empresa' },
-      { label: 'Mision, Vision y Valores', href: '/quienes-somos/mision-vision-valores' },
+      { label: 'Misión, Visión y Valores', href: '/quienes-somos/mision-vision-valores' },
       { label: 'Calidad y Certificaciones', href: '/quienes-somos/calidad-certificaciones' },
       { label: 'Equipo', href: '/quienes-somos/equipo' },
     ],
   },
   {
-    label: 'MANTENIMIENTO E INGENIERIA',
+    label: 'MANTENIMIENTO E INGENIERÍA',
     href: '/mantenimiento-ingenieria',
     parentNavigable: false,
     subItems: [
       { label: 'MRO', href: '/mantenimiento-ingenieria/mro' },
-      { label: 'Robotica', href: '/mantenimiento-ingenieria/robotica' },
-      { label: 'Logistica', href: '/mantenimiento-ingenieria/logistica' },
+      { label: 'Robótica', href: '/mantenimiento-ingenieria/robotica' },
+      { label: 'Logística', href: '/mantenimiento-ingenieria/logistica' },
       { label: 'Naval', href: '/mantenimiento-ingenieria/naval' },
     ],
   },
@@ -43,9 +44,9 @@ const navItems: NavItem[] = [
     href: '#',
     subItems: [
       { label: 'T55', href: '/proyectos/t55' },
-      { label: 'Contenedores', href: '/proyectos/contenedores' },
+      { label: 'Run-flat', href: '/proyectos/runflats' },
       { label: 'M113 robotizado', href: '/proyectos/m113-robotizado' },
-      { label: 'Drones', href: '/proyectos/drones' },
+      { label: 'SIRA-CUAS', href: '/proyectos/sira-cuas' },
     ],
   },
   {
@@ -80,7 +81,7 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between py-5">
         <Link to="/" className="flex items-center">
           <img
-            src="/nlt-logo.png"
+            src={nltLogo}
             alt="Next Level Technologies"
             className="h-16 w-auto"
             style={{ filter: isScrolled ? 'brightness(0.7) contrast(1.3)' : 'none' }}

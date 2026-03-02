@@ -107,7 +107,7 @@ const Sensores = () => {
                   to="/contacto"
                   className="inline-block bg-accent text-accent-foreground px-6 py-2 rounded font-medium hover:bg-accent/90 transition-colors"
                 >
-                  Consultar
+                  Contáctenos para saber más
                 </Link>
               </div>
             </div>

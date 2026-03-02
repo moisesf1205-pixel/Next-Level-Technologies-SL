@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 interface TeamMember {
   name: string;
@@ -22,15 +22,15 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Coronel Andrés Fernández Savín',
-    role: 'Director Comercial',
-    description: 'Andrés Fernández Savín, coronel de Infantería, aporta más de 40 años de experiencia en defensa y gestión de programas estratégicos. Ha liderado unidades y proyectos clave del Ministerio de Defensa, incluidos Leopard y Pizarro/Centauro. Actualmente dirige el Área de Desarrollo de Negocio de NLT, impulsando alianzas, oportunidades y presencia institucional a nivel nacional e internacional.',
+    role: 'Director de Desarrollo de Negocio',
+    description: 'Andrés Fernández Savín, coronel de Infantería (R), aporta más de 40 años de experiencia en defensa y gestión de programas estratégicos. Ha liderado unidades y programas especiales de armamento y material, como el Leopardo 2E, el Pizarro/Centauro y el Pizarro Fase 2. Actualmente dirige el Área de Desarrollo de Negocio de NLT, impulsando alianzas, oportunidades y presencia institucional a nivel nacional e internacional.',
     image: '/team/andres-savin.jpg',
     linkedin: 'https://www.linkedin.com/in/andres-fernandez-savin-673b24349/',
   },
   {
     name: 'Joendry Rafael Chirinos',
     role: 'Director del Departamento de MRO',
-    description: 'Joendry Chirinos es ingeniero mecánico con más de 17 años de experiencia en los sectores de defensa, industrial y automotriz. Como director técnico en NLT, lidera proyectos de modernización de vehículos blindados legacy mediante ingeniería inversa e integración de arquitecturas digitales para mejorar su desempeño y vida útil.',
+    description: 'Joendry Chirinos es ingeniero mecánico con más de 17 años de experiencia en los sectores de defensa, industrial y automoción. Como director técnico en NLT, lidera proyectos de modernización de vehículos blindados legacy, mediante ingeniería inversa e integración de arquitecturas digitales para mejorar su desempeño y vida útil.',
     image: '/team/joendry-chirinos.jpg',
     linkedin: 'https://www.linkedin.com/in/joendry-rafael-chirinos-colina-6b525415a/',
   },
@@ -44,13 +44,6 @@ const Equipo = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link 
-            to="/quienes-somos" 
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Quiénes Somos
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,7 +135,7 @@ const Equipo = () => {
             to="/contacto"
             className="inline-block bg-accent text-accent-foreground px-8 py-3 rounded font-medium hover:bg-accent/90 transition-colors"
           >
-            Contactar
+            Contáctenos para saber más
           </Link>
         </div>
       </section>

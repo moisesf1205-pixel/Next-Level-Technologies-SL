@@ -2,7 +2,6 @@
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 
 const IoTConectividad = () => {
   return (
@@ -11,20 +10,13 @@ const IoTConectividad = () => {
 
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link
-            to="/mantenimiento-ingenieria"
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Mantenimiento e Ingenieria
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight"
           >
-            Logistica
+            Logística
           </motion.h1>
         </div>
       </section>
@@ -38,23 +30,23 @@ const IoTConectividad = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Diseñamos modelos de <strong className="text-primary">logistica tecnica</strong> para garantizar disponibilidad,
-                  reposicion y trazabilidad de recursos en ciclos operativos exigentes.
+                  Diseñamos modelos de <strong className="text-primary">logística técnica</strong> para garantizar disponibilidad,
+                  reposición y trazabilidad de recursos en ciclos operativos exigentes.
                 </p>
                 <p>
                   Alineamos inventario, mantenimiento programado y niveles de servicio con indicadores de rendimiento
                   para reducir paradas no planificadas.
                 </p>
                 <p>
-                  Integramos procesos de taller, almacen y campo para una cadena de soporte coherente de punta a punta.
+                  Integramos procesos de taller, almacén y campo para una cadena de soporte coherente de punta a punta.
                 </p>
               </div>
 
               <h3 className="text-xl font-bold text-primary mt-8 mb-4">Bloques funcionales</h3>
               <ul className="space-y-3 text-muted-foreground">
-                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Plan maestro de repuestos y consumibles criticos.</span></li>
-                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Gestion de almacenes, rotacion y niveles min/max.</span></li>
-                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Programacion de intervenciones y ventanas operativas.</span></li>
+                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Plan maestro de repuestos y consumibles críticos.</span></li>
+                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Gestión de almacenes, rotación y niveles min/max.</span></li>
+                <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Programación de intervenciones y ventanas operativas.</span></li>
                 <li className="flex items-start gap-3"><span className="w-2 h-2 bg-accent rounded-full mt-2" /><span>Tableros KPI para seguimiento de disponibilidad y tiempos.</span></li>
               </ul>
             </div>
@@ -73,17 +65,17 @@ const IoTConectividad = () => {
                 <div className="space-y-3 text-sm text-muted-foreground">
                   <p><strong className="text-primary">Matriz de criticidad:</strong> prioridad por sistema y riesgo operativo.</p>
                   <p><strong className="text-primary">Plan de abastecimiento:</strong> stock objetivo y proveedores homologados.</p>
-                  <p><strong className="text-primary">Procedimiento de soporte:</strong> flujos de aprobacion y escalado tecnico.</p>
+                  <p><strong className="text-primary">Procedimiento de soporte:</strong> flujos de aprobación y escalado técnico.</p>
                 </div>
               </div>
 
               <div className="bg-accent/10 p-6 rounded-lg mt-6 border border-accent/20">
-                <h3 className="text-lg font-bold text-primary mb-2">Necesitas mejorar tu cadena de soporte?</h3>
+                <h3 className="text-lg font-bold text-primary mb-2">¿Necesitas mejorar tu cadena de soporte?</h3>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Definimos contigo un modelo logistico medible y orientado a resultados.
+                  Definimos contigo un modelo logístico medible y orientado a resultados.
                 </p>
                 <Link to="/contacto" className="inline-block bg-accent text-accent-foreground px-6 py-2 rounded font-medium hover:bg-accent/90 transition-colors">
-                  Solicitar diagnostico
+                  Contáctenos para saber más
                 </Link>
               </div>
             </div>

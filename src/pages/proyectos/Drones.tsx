@@ -1,8 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
 
 const Drones = () => {
   return (
@@ -11,10 +9,6 @@ const Drones = () => {
 
       <section className="pt-32 pb-14 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link to="/proyectos" className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-4">
-            <ArrowLeft size={18} />
-            Volver a Proyectos
-          </Link>
           <h1 className="text-4xl font-bold">Drones y UAS</h1>
           <p className="mt-3 max-w-3xl text-primary-foreground/80">
             Soluciones UAS para ISR, apoyo logístico y operaciones cooperativas, con cargas útiles modulares.

@@ -1,8 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Cpu, Wrench, Radar } from 'lucide-react';
+import { Shield, Cpu, Wrench, Radar } from 'lucide-react';
 
 const capabilityItems = [
   {
@@ -47,7 +46,7 @@ const modernizationBlocks = [
   {
     label: 'Soporte y MRO',
     bullets: [
-      'Manual digital interactivo (IETM) y sensórica para mantenimiento predictivo.',
+      'Manual digital interactivo (IETM).',
       'Kit de herramental y banco de pruebas para L2/L3 en teatro.',
       'Capacitación completa a tripulaciones y equipos de mantenimiento.',
     ],
@@ -55,8 +54,8 @@ const modernizationBlocks = [
 ];
 
 const gallery = [
-  'https://upload.wikimedia.org/wikipedia/commons/c/cc/T-55_main_battle_tank.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/3/3d/T-55_MBT.jpg',
+  'https://upload.wikimedia.org/wikipedia/commons/c/cc/T-55_main_battle_tank.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/8/8b/T-55_main_battle_tank_2.jpg',
 ];
 
@@ -68,13 +67,6 @@ const T55 = () => {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
-          <Link
-            to="/proyectos"
-            className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors"
-          >
-            <ArrowLeft size={20} />
-            Volver a Proyectos
-          </Link>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,7 +92,7 @@ const T55 = () => {
           >
             <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/cc/T-55_main_battle_tank.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3d/T-55_MBT.jpg"
                 alt="T-55 modernizado en campo"
                 className="w-full h-full object-cover"
               />
@@ -183,3 +175,4 @@ const T55 = () => {
 };
 
 export default T55;
+

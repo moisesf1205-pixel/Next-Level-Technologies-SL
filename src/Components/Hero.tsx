@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import heroVideo from '@/assets/hero-video.mp4';
 
 const Hero = () => {
   const scrollToNext = () => {
@@ -18,7 +19,7 @@ const Hero = () => {
           playsInline
           className="absolute w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
         </video>
         {/* Overlay oscuro para mejorar legibilidad del texto */}
         <div className="absolute inset-0 bg-black/40"></div>

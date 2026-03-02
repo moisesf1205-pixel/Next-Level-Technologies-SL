@@ -24,7 +24,7 @@ const Index = () => {
         title="MANTENIMIENTO E INGENIERÍA"
         subtitle="Capacidades integrales para sistemas críticos"
         imageSrc={engineImage}
-        imageAlt="Mantenimiento e ingenieria de tanques en entorno operativo"
+        imageAlt="Mantenimiento e ingeniería de tanques en entorno operativo"
         reverse
         bgColor="white"
         linkTo="/mantenimiento-ingenieria"
