@@ -1,0 +1,4 @@
+* text=auto
+​
+# Force case sensitivity for paths
+src/components/** linguist-language=TypeScript
