@@ -39,7 +39,7 @@ import Empresa from "./pages/quienes/Empresa";
 import MisionVisionValores from "./pages/quienes/MisionVisionValores";
 import CalidadCertificaciones from "./pages/quienes/CalidadCertificaciones";
 import Equipo from "./pages/quienes/Equipo";
-import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
